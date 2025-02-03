@@ -35,13 +35,15 @@ namespace TextRPG
                 if (num == 1)
                 {
                     Console.WriteLine("상태보기로 이동합니다.");
+                    ViewStatus viewstatus = new ViewStatus();
+                    viewstatus.ShowStatus();
                 }
                 else if (num == 2)
                 {
                     Console.WriteLine("인벤토리로 이동합니다.");
-                    ViewStatus viewstatus = new ViewStatus();
-                    viewstatus.ShowStatus();
-                    break;
+                    Inventory inventory = new Inventory();
+                    TextRPG.Inventory.OpenInventory();
+                    
                 }
                 else if (num == 3)
                 {
