@@ -31,9 +31,9 @@ namespace TextRPG
             Console.WriteLine("원하시는 행동을 입력해주세요.");
             Console.WriteLine(">> ");
 
-            
 
-            while(true)
+
+            while (true)
             {
                 string input = Console.ReadLine();
                 bool isValid = int.TryParse(input, out int num) && num == 0;
@@ -47,20 +47,10 @@ namespace TextRPG
                 else
                 {
                     Console.WriteLine("잘못된 입력입니다. 0을 입력해주세요.");
-                    
+
                 }
             }
         }
-
-        class Program
-        {
-            static void Status()
-            {
-
-            }
-        }
-
-
     }
 
 
