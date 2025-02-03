@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace TextRPG
 {
 
-    public class Inventory
+    internal class Inventory
     {
-        public static void OpenInventory()
+        public void OpenInventory()
         {
             Console.WriteLine("인벤토리");
             Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");

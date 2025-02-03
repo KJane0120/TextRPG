@@ -42,7 +42,7 @@ namespace TextRPG
                 {
                     Console.WriteLine("인벤토리로 이동합니다.");
                     Inventory inventory = new Inventory();
-                    TextRPG.Inventory.OpenInventory();
+                    inventory.OpenInventory();
                     
                 }
                 else if (num == 3)
