@@ -40,6 +40,9 @@ namespace TextRPG
                     else if (num == 0)
                     {
                         Console.WriteLine("메인 화면으로 이동합니다.");
+                        StartGame startgame = new StartGame();
+                        startgame.Start();
+                        break;
                     }
                     else
                     {
