@@ -1,6 +1,4 @@
 ﻿using System;
-
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +22,13 @@ namespace TextRPG
             Console.WriteLine("원하시는 행동을 입력해주세요");
             Console.Write(">> ");
 
-            bool isValid;
-            do
+           
+            while(true)
             {
+
                 string input = Console.ReadLine();
-                int num = int.Parse(input);
-                isValid = int.TryParse(input, out num) && (num == 1 || num == 0);
+
+                bool isValid = int.TryParse(input, out int num) && (num == 1 || num == 0);
 
                 if (isValid)
                 {
@@ -42,16 +41,21 @@ namespace TextRPG
                         Console.WriteLine("메인 화면으로 이동합니다.");
                         StartGame startgame = new StartGame();
                         startgame.Start();
-                        break;
+                        return;
                     }
-                    else
-                    {
-                        Console.WriteLine("잘못된 입력입니다. 1, 0 중에 입력해주세요.");
-                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("잘못된 입력입니다. 1, 0 중에 입력해주세요.");
                 }
 
+
             }
-            while (!isValid);
+            
         }
+
+
+
     }
 }
