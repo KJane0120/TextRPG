@@ -9,24 +9,36 @@ namespace TextRPG
 
     internal class Inventory
     {
+        Item item = new Item();
+
+
         public void OpenInventory()
         {
+            Console.WriteLine();
             Console.WriteLine("인벤토리");
             Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
-            Console.WriteLine();
-            Console.WriteLine("[아이템 목록]");
+            if (item != null)
+            {
+                item.ShowMyItem();
+            }
+            else
+            {
+                Console.Write("[아이템 목록]\n ");
+            }
             Console.WriteLine();
             Console.WriteLine("1. 장착 관리");
             Console.WriteLine("0. 나가기");
             Console.WriteLine();
             Console.WriteLine("원하시는 행동을 입력해주세요");
             Console.Write(">> ");
+            
 
-           
-            while(true)
+
+            while (true)
             {
 
                 string input = Console.ReadLine();
+                Console.WriteLine();
 
                 bool isValid = int.TryParse(input, out int num) && (num == 1 || num == 0);
 
@@ -52,7 +64,7 @@ namespace TextRPG
 
 
             }
-            
+
         }
 
 
