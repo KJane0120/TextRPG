@@ -21,42 +21,36 @@ namespace TextRPG
             Console.WriteLine();
             Console.WriteLine("원하시는 행동을 입력해주세요");
 
-            int num;
-            bool isValid;
-
-            //입력받은 값이 1, 2, 3이 아니면 다시 입력받도록 하기
-            do
+            //1,2,3 중에 입력받기
+            while (true)
             {
                 Console.Write(">> ");
-
                 string input = Console.ReadLine();
-                isValid = int.TryParse(input, out num) && (num == 1 || num == 2 || num == 3);
 
-                if (num == 1)
+                if (int.TryParse(input, out int num) && (num == 1 || num == 2 || num == 3))
                 {
-                    Console.WriteLine("상태보기로 이동합니다.");
-                    ViewStatus viewstatus = new ViewStatus();
-                    viewstatus.ShowStatus();
+                    switch (num)
+                    {
+                        case 1:
+                            Console.WriteLine("상태보기로 이동합니다.");
+                            new ViewStatus().ShowStatus();
+                            break;
+                        case 2:
+                            Console.WriteLine("인벤토리로 이동합니다.");
+                            new Inventory().OpenInventory();
+                            break;
+                        case 3:
+                            Console.WriteLine("상점으로 이동합니다.");
+                            break;
+                    }
+                    break; // 올바른 입력을 받으면 루프 탈출
                 }
-                else if (num == 2)
-                {
-                    Console.WriteLine("인벤토리로 이동합니다.");
-                    Inventory inventory = new Inventory();
-                    inventory.OpenInventory();
-                    
-                }
-                else if (num == 3)
-                {
-                    Console.WriteLine("상점으로 이동합니다.");
-                }
-                else if (!isValid)
+                else
                 {
                     Console.WriteLine("잘못된 입력입니다. 1, 2, 3 중에 입력해주세요.");
                 }
-
             }
-            while (!isValid);
-            
+
         }
     }
 }
