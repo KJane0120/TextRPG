@@ -42,7 +42,7 @@ namespace TextRPG
                     Console.WriteLine("메인화면으로 돌아갑니다.");
                     StartGame startgame = new StartGame();
                     startgame.Start();
-                    break;
+                    return;
                 }
                 else
                 {
