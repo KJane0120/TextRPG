@@ -41,6 +41,7 @@ namespace TextRPG
                             break;
                         case 3:
                             Console.WriteLine("상점으로 이동합니다.");
+                            new Store().OpenStore();
                             break;
                     }
                     break; // 올바른 입력을 받으면 루프 탈출
