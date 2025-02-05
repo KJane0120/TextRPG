@@ -10,7 +10,7 @@ namespace TextRPG
     internal class ViewStatus
     {
         //프로퍼티를 이용해 각 수치들을 저장하고 출력할 수 있도록 할것
-        int lv;
+        int lv = 1;
         public int str = 10;
         public int def = 5;
         int hp = 100;
@@ -18,6 +18,7 @@ namespace TextRPG
 
         public void ShowStatus()
         {
+            Console.WriteLine();
             Console.WriteLine("상태보기");
             Console.WriteLine("캐릭터의 정보가 표시됩니다.");
             Console.WriteLine();
@@ -45,14 +46,13 @@ namespace TextRPG
                 if (isValid)
                 {
                     Console.WriteLine("메인화면으로 돌아갑니다.");
-                    StartGame startgame = new StartGame();
-                    startgame.Start();
+                    
+                    StartGame.Start();
                     return;
                 }
                 else
                 {
                     Console.WriteLine("잘못된 입력입니다. 0을 입력해주세요.");
-
                 }
             }
         }
