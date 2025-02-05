@@ -8,7 +8,7 @@ namespace TextRPG
 {
     internal class StartGame
     {
-        public void Start()
+        public static void Start()
         {
 
 
