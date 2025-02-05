@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace TextRPG
 {
+    
     internal class ViewStatus
     {
-        int lv;
-        int str = 10;
-        int def = 5;
+        //프로퍼티를 이용해 각 수치들을 저장하고 출력할 수 있도록 할것
+        int lv = 1;
+        public int str = 10;
+        public int def = 5;
         int hp = 100;
-        int gold = 1500;
+        public int gold = 1500;
 
         public void ShowStatus()
         {
+            Console.WriteLine();
             Console.WriteLine("상태보기");
             Console.WriteLine("캐릭터의 정보가 표시됩니다.");
             Console.WriteLine();
@@ -29,25 +32,27 @@ namespace TextRPG
             Console.WriteLine("0. 나가기");
             Console.WriteLine();
             Console.WriteLine("원하시는 행동을 입력해주세요.");
-            Console.WriteLine(">> ");
-
+            Console.Write(">> ");
             
 
-            while(true)
+
+
+            while (true)
             {
                 string input = Console.ReadLine();
+                Console.WriteLine();
+
                 bool isValid = int.TryParse(input, out int num) && num == 0;
                 if (isValid)
                 {
                     Console.WriteLine("메인화면으로 돌아갑니다.");
-                    StartGame startgame = new StartGame();
-                    startgame.Start();
-                    break;
+                    
+                    StartGame.Start();
+                    return;
                 }
                 else
                 {
                     Console.WriteLine("잘못된 입력입니다. 0을 입력해주세요.");
-                    
                 }
             }
         }
